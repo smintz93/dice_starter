@@ -16,17 +16,27 @@ let scores = [0,0];
 let roundScore = 0;
 let activePlayer = 0; 
 
-let dice = Math.floor(Math.random() * 6) + 1;
+// let dice = Math.floor(Math.random() * 6) + 1;
 // console.log(dice, "<--random number");
 
 document.querySelector("#current-" + activePlayer).textContent = dice;
 
 document.querySelector(".dice").style.display = "none";
 
+function btn(){
+
+}
+
+// callback function that is called by another function. this is being called by eventlistener function
+// or write anoynomous function. no name used once
+document.querySelector(".btn-roll").addEventListener("click", function(){
+	console.log('click')
+	// 1. Random number 
+	let dice = Math.floor(Math.random() * 6) + 1;
+
+	// 2. Display the result 
+	document.querySelector(".dice").style.display = "block";
 
 
-
-
-
-
-
+	// 3. Update the round score IF the rolled number was NOT a 1
+});
