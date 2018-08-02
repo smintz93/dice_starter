@@ -57,8 +57,9 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 	// update the ui to reflect change 
 	document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 	// check if player won the game (100 pts)
-	if(scores[activePlayer] >= 10) {
+	if(scores[activePlayer] >= 100) {
 		document.querySelector('#name-' + activePlayer).textContent = "Winner";
+		hideDice();
 	} else {
 		nextPlayer();
 	}
@@ -78,7 +79,10 @@ function nextPlayer() {
 	// document.querySelector('.player-0-panel').classList.remove('active');
 	// document.querySelector('.player-1-panel').classList.add('active');
 
-	document.querySelector(".dice").style.display = "none";
+	hideDice();
+}
 
+function hideDice(){
+	document.querySelector(".dice").style.display = "none";
 }
 
