@@ -53,12 +53,23 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
 		document.querySelector('.player-0-panel').classList.toggle('active');
 		document.querySelector('.player-1-panel').classList.toggle('active');
 
-		
+
 		// document.querySelector('.player-0-panel').classList.remove('active');
 		// document.querySelector('.player-1-panel').classList.add('active');
 
 		document.querySelector(".dice").style.display = "none";
 
 	}
+});
+
+document.querySelector(".btn-hold").addEventListener("click", function(){
+	// add player current  score to global score
+	scores[activePlayer] += roundScore;
+
+	// update the ui to reflect change 
+	document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+	// check if player won the game (100 pts)
+
 });
 
