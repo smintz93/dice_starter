@@ -57,7 +57,7 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 		// update the ui to reflect change 
 		document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 		// check if player won the game (100 pts)
-		if(scores[activePlayer] >= 10) {
+		if(scores[activePlayer] >= 50) {
 			document.querySelector('#name-' + activePlayer).textContent = "Winner";
 			hideDice();
 			document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
