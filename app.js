@@ -12,9 +12,7 @@ GAME RULES:
 // 
 
 // Global vars
-let scores = [0,0];
-let roundScore = 0;
-let activePlayer = 0; 
+ init();
 
 // let dice = Math.floor(Math.random() * 6) + 1;
 // console.log(dice, "<--random number");
@@ -23,11 +21,6 @@ let activePlayer = 0;
 
 // document.querySelector(".dice").style.display = "none";
 // get element by id a bit faster than qs.
-
-document.getElementById("score-0").textContent = "0";
-document.getElementById("score-1").textContent = "0";
-document.getElementById("current-0").textContent = "0";
-document.getElementById("current-1").textContent = "0";
 
 // callback function that is called by another function. this is being called by eventlistener function
 // or write anoynomous function. no name used once
@@ -68,6 +61,8 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 
 });
 
+document.querySelector(".btn-new").addEventListener("click", init)
+
 function nextPlayer() {
 	activePlayer === 0  ? activePlayer = 1 : activePlayer = 0; 
 	roundScore = 0; 
@@ -83,7 +78,21 @@ function nextPlayer() {
 	hideDice();
 }
 
+function init(){
+	let scores = [0,0];
+	let roundScore = 0;
+	let activePlayer = 0;
+
+	hideDice();
+	document.getElementById("score-0").textContent = "0";
+	document.getElementById("score-1").textContent = "0";
+	document.getElementById("current-0").textContent = "0";
+	document.getElementById("current-1").textContent = "0";
+	}
+
 function hideDice(){
 	document.querySelector(".dice").style.display = "none";
 }
+
+
 
